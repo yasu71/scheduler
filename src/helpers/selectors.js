@@ -26,3 +26,19 @@ export function getInterview(state, interview) {
     }
   }
 };
+
+export function getInterviewersForDay(state, providedDay) {
+  // get the whole day obj
+  const dayObj = state.days.find(day => {
+    return day.name === providedDay;
+  })
+
+  if (!dayObj) {
+    return [];
+  }
+
+  // populate the array with the appointment object
+  return dayObj.interviewers.map((interviewerID) => {
+    return state.interviewers[interviewerID];
+  })
+};
