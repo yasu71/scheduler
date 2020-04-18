@@ -8,11 +8,27 @@ import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "help
 import "components/Application.scss";
 
 export default function Application(props) {
+
+  function bookInterview(id, interview) {
+    console.log("bookInterview: ", id, interview);
+    const appointment = {
+      ...state.appointments[id],
+      interview: {...interview}
+    };
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+    setState({...state, appointments});
+  };
+
   const [state, setState] = useState({
     day: "Monday",
     days: [],
-    appointments: {}
+    appointments: {},
+    interviewers: {}
   });
+
   const setDay = day => setState({ ...state, day });
   const appointments = getAppointmentsForDay(state, state.day);
   const interviewers = getInterviewersForDay(state, state.day);
@@ -26,7 +42,6 @@ export default function Application(props) {
     ])
     .then((all) => {
       setState(prev => ({ ...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data }));
-      console.log(all[2].data)
     })
   }, []);
   
@@ -62,6 +77,7 @@ export default function Application(props) {
               time={appointment.time}
               interview={interview}
               interviewers={interviewers}
+              bookInterview={(id, interview) => bookInterview(id, interview)}
             />
           )
         })}
