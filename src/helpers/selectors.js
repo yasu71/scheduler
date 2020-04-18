@@ -20,15 +20,13 @@ export function getInterview(state, interview) {
   } else {
     for (const interviewer in state.interviewers) {
       if (parseInt(interviewer) === interview.interviewer) {
-        interview.interviewer = state.interviewers[interviewer];
-        return interview;
+        return { student: interview.student, interviewer: state.interviewers[interviewer]};
       }
     }
   }
 };
 
 export function getInterviewersForDay(state, providedDay) {
-  // get the whole day obj
   const dayObj = state.days.find(day => {
     return day.name === providedDay;
   })
@@ -37,7 +35,6 @@ export function getInterviewersForDay(state, providedDay) {
     return [];
   }
 
-  // populate the array with the appointment object
   return dayObj.interviewers.map((interviewerID) => {
     return state.interviewers[interviewerID];
   })
