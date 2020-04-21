@@ -32,7 +32,7 @@ export default function useApplicationData(props) {
       ...state.appointments,
       [appointmentId]: appointment
     };
-    
+    // getting remaining spots
     // 1. getting the day that an appointment is saved
     const getDay = state.days.filter(day => {
       for (const id of day.appointments) {
@@ -56,7 +56,7 @@ export default function useApplicationData(props) {
       } else {
         return day;
       }
-    })
+    });
     
     return axios.put(`http://localhost:8001/api/appointments/${appointment.id}`, appointment)
     .then(() => {
@@ -81,6 +81,7 @@ export default function useApplicationData(props) {
       ...state.appointments,
       [appointmentId]: appointment
     };
+    // getting remaining spots
     const getDay = state.days.filter(day => {
       for (const id of day.appointments) {
         if (id === appointmentId) {
