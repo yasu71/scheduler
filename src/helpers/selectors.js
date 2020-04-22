@@ -30,11 +30,11 @@ export function getInterviewersForDay(state, providedDay) {
   const dayObj = state.days.find(day => {
     return day.name === providedDay;
   })
-
+  
   if (!dayObj) {
     return [];
   }
-
+  
   return dayObj.interviewers.map((interviewerID) => {
     return state.interviewers[interviewerID];
   })
