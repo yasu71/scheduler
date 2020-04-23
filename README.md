@@ -55,7 +55,3 @@ npm run cypress
 - React-dom
 - React-hooks testing library
 - React-scripts
-<<<<<<< HEAD
-
-=======
->>>>>>> 6ae75d62c14661ec5edde852c50b0816f5858328
