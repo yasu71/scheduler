@@ -3,11 +3,15 @@ This application was built and tested a React application that allows users to b
 
 This project was a part of student projects to practice React, Axios, Websockets, Storybook, Jest, and Cypress.
 
-## Demo
+## Screenshots
 
-!["Booking, Editing, Cnacelling an Appointment"](https://github.com/yasu71/schedulerblob/master/docs/InterviewScheduler_Screenshot1.gif?raw=true)
+!["Day Hover"](https://github.com/yasu71/scheduler/blob/master/docs/Sceduler_Screenshot3.png?raw=true)
 
-!["Error Handling"](https://github.com/yasu71/scheduler/blob/master/docs/InterviewScheduler_Screenshot2_ErrorHandling.gif?raw=true)
+!["Booking and Editing an Appointment"](https://github.com/yasu71/scheduler/blob/master/docs/Sceduler_Screenshot1.png?raw=true)
+
+!["Confirmation"](https://github.com/yasu71/scheduler/blob/master/docs/Sceduler_Screenshot2.png?raw=true)
+
+!["Error Handling"](https://github.com/yasu71/scheduler/blob/master/docs/Sceduler_Screenshot4.png?raw=true)
 
 ## Getting Started
 
@@ -51,3 +55,7 @@ npm run cypress
 - React-dom
 - React-hooks testing library
 - React-scripts
+<<<<<<< HEAD
+
+=======
+>>>>>>> 6ae75d62c14661ec5edde852c50b0816f5858328
