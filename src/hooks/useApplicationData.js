@@ -23,7 +23,7 @@ export default function useApplicationData(props) {
   const setDay = day => setState({ ...state, day });
   
   function bookInterview(appointmentId, interview) {
-    console.log("interview", interview)
+    // console.log("interview", interview)
     const appointment = {
       ...state.appointments[appointmentId],
       interview: {...interview}
@@ -62,14 +62,6 @@ export default function useApplicationData(props) {
     .then(() => {
       setState({...state, appointments, days});
     })
-    // console.log("app id", appointment.id)
-    // return new Promise(function(resolve, reject) {       axios.put(`http://localhost:8001/api/appointments/${appointment.id}`, appointment )         
-    // .then(() => {resolve();           
-    //   setState(({...state, appointments: appointments }));
-    // })
-    // .catch(error => {reject();
-    //   console.error(`ERROR: ${error}`)});
-    // });
   };
 
   function cancelInterview(appointmentId) {
@@ -104,7 +96,7 @@ export default function useApplicationData(props) {
     .then(() => {
       setState({...state, appointments, days});
     })
-  }
+  };
 
   return { state, setDay, bookInterview, cancelInterview }
-}
+};
